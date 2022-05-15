@@ -5,12 +5,13 @@ import { DependencyIdentifier } from "../../../DependencyIdentifiers";
 import { ILogger } from "../../Logger/interface/ILogger";
 import { IAuthentication } from "../interface/IAuthentication";
 import { IAPIClient } from "../../APIClient/interface/IAPIClient";
+import 'dotenv/config'
 
 @injectable()
 export class Authentication implements IAuthentication {
 
-    private userid: string = "buyer-challenge@caronsale.de";
-    private password: string = "Test123.";
+    private userid: string | undefined = process.env.BUYER;
+    private password: string | undefined = process.env.PASSWORD;
     userId!: string;
     token!: string;
 

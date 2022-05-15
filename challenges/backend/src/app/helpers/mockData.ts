@@ -1,6 +1,6 @@
-export const mockRunningAuctionResponse = [
+export const mockRunningAuctionsResponse = [
     {
-        uuid: "ae80b321-7ecb-480b-b6a5-50d36641eaa2",
+        uuid: "e01899e3-b683-44a8-8ebb-8db99832e068",
         state: 2,
         endingTime: "2021-09-22T11:26:48.069Z",
         remainingTimeInSeconds: 511396,
@@ -18,7 +18,7 @@ export const mockRunningAuctionResponse = [
         isCrossBorderNetSale: false,
     },
     {
-        uuid: "2c8e1209-9e06-4684-b18f-d0bcf1b7df3e",
+        uuid: "3970f155-baea-4d1a-949e-583e12bb8dda",
         state: 2,
         endingTime: "2021-09-22T11:21:48.069Z",
         remainingTimeInSeconds: 511096,
@@ -36,7 +36,7 @@ export const mockRunningAuctionResponse = [
         isCrossBorderNetSale: false,
     },
     {
-        uuid: "b7e72fb0-3ecc-450f-b777-b141e2c880bc",
+        uuid: "b0580029-b9aa-4d6e-b08b-68279a79ff34",
         state: 2,
         endingTime: "2021-09-23T08:00:00.000Z",
         remainingTimeInSeconds: 585388,
@@ -54,7 +54,7 @@ export const mockRunningAuctionResponse = [
         isCrossBorderNetSale: false,
     },
     {
-        uuid: "1408c650-6c4d-4a73-8c91-36e0a486e3dd",
+        uuid: "a85524a2-c231-4ecd-9b6d-1218ae832495",
         state: 2,
         endingTime: "2021-09-30T17:06:00.000Z",
         remainingTimeInSeconds: 1222948,

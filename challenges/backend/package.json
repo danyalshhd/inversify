@@ -11,7 +11,9 @@
   "author": "danyalshhd",
   "license": "ISC",
   "dependencies": {
+    "@dstransaction/common": "^1.0.25",
     "axios": "^0.21.4",
+    "dotenv": "^16.0.1",
     "inversify": "^4.13.0",
     "reflect-metadata": "^0.1.13"
   },

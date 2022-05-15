@@ -6,6 +6,7 @@ import { IAPIClient } from "../../APIClient/interface/IAPIClient";
 import { IAuthentication } from "../../Authentication/interface/IAuthentication";
 import { AxiosResponse } from "axios";
 import { RunningAuctionResponse } from "../types/RunningAuction";
+import { NotAuthorizedError } from "@dstransaction/common";
 @injectable()
 export class CarOnSaleClient implements ICarOnSaleClient {
     public constructor(
@@ -19,7 +20,6 @@ export class CarOnSaleClient implements ICarOnSaleClient {
             await this.auth.authenticateUser();
             return this.retrieveRunningAuctions();
         } catch (error: any) {
-            // Log the error before throwing
             let errorMessage = error.message;
             if (error.isAxiosError) {
                 errorMessage = error?.response?.data?.message;
@@ -31,7 +31,7 @@ export class CarOnSaleClient implements ICarOnSaleClient {
 
     private async retrieveRunningAuctions() {
         if (!this.auth.token) {
-            throw new Error("Please authenticate user first!");
+            throw new NotAuthorizedError();
         }
 
         this.apiClient.instance.defaults.headers.authtoken = this.auth.token;

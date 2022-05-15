@@ -27,16 +27,13 @@ export class AuctionMonitorApp {
             if (response && response.length) {
                 result.auctions = response;
                 result.totalRunningAuctions = response.length;
-                result.averageBidNumber =
-                    response.reduce((acc, obj) => acc + (obj.numBids || 0), 0) / response.length;
-                const totalHighestBidValue = response.reduce(
-                    (acc, obj) => acc + (obj.currentHighestBidValue || 0), 0);
-                const totalAskValue = response.reduce(
-                    (acc, obj) => acc + (obj.minimumRequiredAsk || 0), 0);
+                result.averageBidNumber = response.reduce((acc, obj) => acc + (obj.numBids || 0), 0) / response.length;
+                const totalHighestBidValue = response.reduce((acc, obj) => acc + (obj.currentHighestBidValue || 0), 0);
+                const totalAskValue = response.reduce((acc, obj) => acc + (obj.minimumRequiredAsk || 0), 0);
                 result.averageAuctionProgress = (totalHighestBidValue / totalAskValue) * 100;
             }
             this.logger.info(result);
-            this.logger.log("End of Program, Exiting now!");
+            this.logger.log("Finished!");
             process.exit(0);
         } catch (error: any) {
             let errorMessage = error.message;

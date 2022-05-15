@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { mockRunningAuctionResponse } from "../../../helpers/mockData";
+import { mockRunningAuctionsResponse } from "../../../helpers/mockData";
 import { RunningAuctionResponse } from "../types/RunningAuction";
 import { ICarOnSaleClient } from "../interface/ICarOnSaleClient";
 
@@ -11,8 +11,8 @@ class CarOnSaleClientMock implements ICarOnSaleClient {
         this.client.token = token;
     }
     getRunningAuctions(): Promise<RunningAuctionResponse[]> {
-        if (!this.client.token) throw new Error("Please authenticate user first!");
-        return Promise.resolve(mockRunningAuctionResponse);
+        if (!this.client.token) throw new Error("Not Authorized");
+        return Promise.resolve(mockRunningAuctionsResponse);
     }
 }
 
@@ -31,7 +31,7 @@ describe("CarOnSaleClient Test", () => {
         try {
             await client.getRunningAuctions();
         } catch (error: any) {
-            expect(error.message).to.equal("Please authenticate user first!");
+            expect(error.message).to.equal("Not Authorized");
         }
     });
 });

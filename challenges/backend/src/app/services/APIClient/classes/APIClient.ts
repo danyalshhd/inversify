@@ -2,11 +2,11 @@ import axios, { AxiosInstance } from "axios";
 import { injectable, inject } from "inversify";
 import { IAPIClient } from "../interface/IAPIClient";
 import { DependencyIdentifier } from "../../../DependencyIdentifiers";
+import 'dotenv/config'
 
 @injectable()
 export class APIClient implements IAPIClient {
-
-    private userId: string = "buyer-challenge@caronsale.de";
+    private userId: string | undefined = process.env.BUYER;
     instance: AxiosInstance;
 
     public constructor(
