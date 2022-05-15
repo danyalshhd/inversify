@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { mockRunningAuctionsResponse } from "../../../helpers/mockData";
+import { mockRunningAuctionsResponse } from "../../../fixtures/mockData";
 import { RunningAuctionResponse } from "../../CarOnSaleClient/types/RunningAuction";
 import { Logger } from "../../Logger/classes/Logger";
 import { IAuthentication } from "../interface/IAuthentication";

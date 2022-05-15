@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { mockRunningAuctionsResponse } from "../../../helpers/mockData";
+import { mockRunningAuctionsResponse } from "../../../fixtures/mockData";
 import { RunningAuctionResponse } from "../types/RunningAuction";
 import { ICarOnSaleClient } from "../interface/ICarOnSaleClient";
 
